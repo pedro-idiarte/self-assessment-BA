@@ -74,10 +74,10 @@ def run_assessment():
 
     results = {category: 0 for category in categories}
 
-    print("\n--- Início da Autoavaliação de Competências de Business Analyst ---")
-
+    print("\n--- Start of the Business Analyst Skills Self-Assessment ---")
+    
     for category, q_list in questions.items():
-        print(f"\nCategoria: {category}")
+        print(f"\nCategory: {category}")
         for i, question in enumerate(q_list):
             while True:
                 sys.stdout.write(f"{i+1}. {question} (y/n): ")
@@ -88,13 +88,13 @@ def run_assessment():
                         results[category] += 1
                     break
                 else:
-                    print("Resposta inválida. Por favor, digite 'y' para sim ou 'n' para não.")
+                    print("Invalid response. Please enter 'y' for yes or 'n' for no.")
 
-    print("\n--- Resultados da Autoavaliação ---")
+    print("\n--- Self-Assessment Results ---")
     for category, score in results.items():
-        print(f"{category}: {score} de 10 (Pontuação: {score * 10}%)")
+        print(f"{category}: {score} out of 10 (Score: {score * 10}%)")
 
-    print("\n--- Fim da Autoavaliação ---")
+    print("\n--- End of Self-Assessment ---")
 
 if __name__ == "__main__":
     run_assessment()
